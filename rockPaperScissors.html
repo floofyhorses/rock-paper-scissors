@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+
+ 
+  
+   
+function playRound(playerSelection, computerSelection) {
+    function getComputerChoice(){
+    //This function generates a random choice that will make the computer's play. This works!
+    const array = ["rock", "paper","scissors"];
+    for(let i =0; i< array.length; i++){
+    let computerSelection= array[Math.floor(Math.random()* array.length)];
+    return computerSelection;
+    }
+
+}
+getComputerChoice();
+
+
+
+function getPlayerChoice(){
+    //This function gets the player's choice and returns it in all lowercase letters 
+    //to match the format of the computer's choice for comparison's sake.//This works too!
+    let playerSelection = prompt("Please choose Rock, Paper, or Scissors").toLowerCase();
+    return playerSelection;
+}
+
+getPlayerChoice();
+
+  if(computerSelection === "rock"&&playerSelection==="paper"){
+    return ("You win! Paper beats Rock!");
+ } else if( computerSelection === "paper"&&playerSelection==="rock"){
+    return ("You lose! Paper beats Rock!");
+} else if( computerSelection === "paper"&&playerSelection==="scissors"){
+    return ("You win! Scissors beats Paper!");
+} else if( computerSelection === "rock"&&playerSelection==="scissors"){
+    return ("You lose! Rock beats Scissors!");
+} else if( computerSelection === "scissors"&&playerSelection==="rock"){
+    return ("You win! Scissors beats Rock!");
+}
+
+}
+  
+playRound(playerSelection,computerSelection);
+
+
+console.log(playRound(playerSelection, computerSelection));
+
+</script>
+
+
+
+</body>
+</html>
