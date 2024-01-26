@@ -26,32 +26,19 @@
   
 
 
-   let computerSelection;
-   let playerSelection;
+   
     
    function getComputerChoice(){
     //This function generates a random choice that will make the computer's play. This works!
     const array = ["rock", "paper","scissors"];
-    for(let i =0; i < array.length; i++){
-    computerSelection = array[Math.floor(Math.random()* array.length)];
-   return computerSelection;
-    }
-    console.log(computerSelection);
+   return array[Math.floor(Math.random()* array.length)];
+  
    }
-   getComputerChoice();
-   
-      function getPlayerChoice(){
-      //This function gets a move choice from the player.
-     playerSelection = prompt("Please choose Rock, Paper, or Scissors").toLowerCase();
-      return playerSelection;
-   }
-    getPlayerChoice();
-   
-    
-   
-   function playRound(playerSelection, computerSelection) {
- 
-   if(computerSelection === "rock" && playerSelection==="paper"){
+  
+ function playRound(playerSelection, computerSelection) {
+ if(computerSelection === playerSelection){
+   return(`It's a tie! You both chose ${playerSelection}.`);
+ } else if(computerSelection === "rock" && playerSelection==="paper"){
     return ("You win! Paper beats Rock!");
  } else if( computerSelection === "paper" && playerSelection==="rock"){
     return ("You lose! Paper beats Rock!");
@@ -61,14 +48,16 @@
     return ("You lose! Rock beats Scissors!");
  } else if( computerSelection === "scissors" && playerSelection==="rock"){
     return ("You win! Rock beats Scissors!");
+ } else if(computerSelection === "scissors" && playerSelection==="paper"){
+      }
    
  }
- console.log(computerSelection);
-}
-// console.log(playRound(playerSelection, computerSelection));
-   
+
+
+   const playerSelection = prompt("Please choose Rock, Paper, or Scissors").toLowerCase();
+   const computerSelection = getComputerChoice();
    playRound(playerSelection, computerSelection);
-   
+   console.log(playRound(playerSelection,computerSelection));
 
 
 
