@@ -28,14 +28,21 @@
 
    
     
+   
+ 
+
+
+ for( let i=0; i < 5; i++){
    function getComputerChoice(){
     //This function generates a random choice that will make the computer's play. This works!
     const array = ["rock", "paper","scissors"];
-   return array[Math.floor(Math.random()* array.length)];
+    return array[Math.floor(Math.random()* array.length)];
   
    }
-  
+   const playerSelection = prompt("Please choose Rock, Paper, or Scissors").toLowerCase();
  function playRound(playerSelection, computerSelection) {
+   //This function plays one round, computer versus player, and reports the winner of the round.
+   //This works!
  if(computerSelection === playerSelection){
    return(`It's a tie! You both chose ${playerSelection}.`);
  } else if(computerSelection === "rock" && playerSelection==="paper"){
@@ -52,12 +59,14 @@
       }
    
  }
-
-
-   const playerSelection = prompt("Please choose Rock, Paper, or Scissors").toLowerCase();
    const computerSelection = getComputerChoice();
+
    playRound(playerSelection, computerSelection);
    console.log(playRound(playerSelection,computerSelection));
+
+ }
+
+   
 
 
 
