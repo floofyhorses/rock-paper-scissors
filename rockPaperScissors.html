@@ -28,11 +28,13 @@
 
    
     
-   
+let wins = 0;
  
-
+function game(){
+   
 
  for( let i=0; i < 5; i++){
+
    function getComputerChoice(){
     //This function generates a random choice that will make the computer's play. This works!
     const array = ["rock", "paper","scissors"];
@@ -47,17 +49,21 @@
    return(`It's a tie! You both chose ${playerSelection}.`);
  } else if(computerSelection === "rock" && playerSelection==="paper"){
     return ("You win! Paper beats Rock!");
+    wins = wins + 1;
  } else if( computerSelection === "paper" && playerSelection==="rock"){
     return ("You lose! Paper beats Rock!");
  } else if( computerSelection === "paper" && playerSelection==="scissors"){
     return ("You win! Scissors beats Paper!");
+    wins = wins + 1;
  } else if( computerSelection === "rock" && playerSelection==="scissors"){
     return ("You lose! Rock beats Scissors!");
  } else if( computerSelection === "scissors" && playerSelection==="rock"){
     return ("You win! Rock beats Scissors!");
+    wins = wins +1;
  } else if(computerSelection === "scissors" && playerSelection==="paper"){
+   return ("You lose! Scissors beats Paper!");
       }
-   
+
  }
    const computerSelection = getComputerChoice();
 
@@ -66,8 +72,10 @@
 
  }
 
-   
+}
 
+game();
+console.log(`You had ${wins} wins!`);
 
 
 </script>
