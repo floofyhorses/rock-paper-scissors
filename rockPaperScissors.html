@@ -28,12 +28,10 @@
 
    
     
-let wins = 0;
+
  
 function game(){
-   
-
- for( let i=0; i < 5; i++){
+   for( let i=0; i < 5; i++){
 
    function getComputerChoice(){
     //This function generates a random choice that will make the computer's play. This works!
@@ -45,25 +43,32 @@ function game(){
  function playRound(playerSelection, computerSelection) {
    //This function plays one round, computer versus player, and reports the winner of the round.
    //This works!
+   let playerWins = 0;
+   let computerWins = 0;
  if(computerSelection === playerSelection){
    return(`It's a tie! You both chose ${playerSelection}.`);
  } else if(computerSelection === "rock" && playerSelection==="paper"){
-    return ("You win! Paper beats Rock!");
-    wins = wins + 1;
+    return("You win! Paper beats Rock!");
+    playerWins++;
+   
  } else if( computerSelection === "paper" && playerSelection==="rock"){
-    return ("You lose! Paper beats Rock!");
+    return("You lose! Paper beats Rock!");
+   computerWins++;
  } else if( computerSelection === "paper" && playerSelection==="scissors"){
-    return ("You win! Scissors beats Paper!");
-    wins = wins + 1;
+    return("You win! Scissors beats Paper!");
+    playerWins++;
  } else if( computerSelection === "rock" && playerSelection==="scissors"){
-    return ("You lose! Rock beats Scissors!");
+    return("You lose! Rock beats Scissors!");
+    computerWins++;
  } else if( computerSelection === "scissors" && playerSelection==="rock"){
-    return ("You win! Rock beats Scissors!");
-    wins = wins +1;
+    return("You win! Rock beats Scissors!");
+    playerWins++;
  } else if(computerSelection === "scissors" && playerSelection==="paper"){
-   return ("You lose! Scissors beats Paper!");
+   return("You lose! Scissors beats Paper!");
+   computerWins++;
       }
-
+   console.log(playerWins);
+   console.log(computerWins);
  }
    const computerSelection = getComputerChoice();
 
@@ -71,11 +76,11 @@ function game(){
    console.log(playRound(playerSelection,computerSelection));
 
  }
-
+ 
 }
 
 game();
-console.log(`You had ${wins} wins!`);
+
 
 
 </script>
